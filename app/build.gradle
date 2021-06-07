@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.androidSdk.compile
+    testOptions.unitTests.includeAndroidResources = true
+
+    compileOptions {
+        sourceCompatibility versions.sourceCompatibility
+        targetCompatibility versions.targetCompatibility
+    }
+
+    defaultConfig {
+        applicationId "com.nytimes.bestsellers"
+        minSdkVersion versions.androidSdk.min
+        targetSdkVersion versions.androidSdk.target
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+}
+
+dependencies {
+
+    api libraries.app.kotlin
+    api libraries.app.kotlinReflect
+
+    api libraries.app.okHttpLogging
+    api libraries.app.retrofit.lib
+    implementation libraries.app.okHttp
+
+    api libraries.app.moshi
+    implementation libraries.app.moshiKotlin
+    implementation libraries.app.retrofit.moshiConverter
+
+    implementation libraries.app.rxJava
+    implementation libraries.app.retrofit.rxJavaAdapter
+
+    implementation libraries.app.koin
+    implementation libraries.app.koinViewModel
+    implementation libraries.app.koinScope
+
+    implementation libraries.support.appcompat
+    implementation libraries.support.design
+    implementation libraries.support.v4
+    implementation libraries.support.recyclerview
+    implementation libraries.support.constraintLayout
+
+    implementation libraries.app.lifecycle.extensions
+    implementation libraries.app.lifecycle.runtime
+    implementation libraries.app.lifecycle.reactivestreams
+    implementation libraries.app.lifecycle.savedState
+
+    implementation libraries.app.rxAndroid
+    implementation libraries.app.retrofit.rxJavaAdapter
+
+    testImplementation libraries.test.androidArchCore
+    testImplementation libraries.test.junit
+    testImplementation libraries.test.truth.lib
+    testImplementation libraries.test.mockito
+    testImplementation libraries.test.mockitoInline
+
+}

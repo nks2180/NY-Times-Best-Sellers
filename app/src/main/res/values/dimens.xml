@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="category_header_height">24dp</dimen>
+    <dimen name="padding_sixteen">16dp</dimen>
+    <dimen name="padding_eight">8dp</dimen>
+
+    <dimen name="small_text_size">14sp</dimen>
+    <dimen name="medium_text_size">16sp</dimen>
+    <dimen name="large_text_size">20sp</dimen>
+</resources>

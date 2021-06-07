@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NY Times Best Sellers</string>
+    <string name="no_internet_connection_text">Please check your internet connection</string>
+    <string name="server_error">Something went wrong</string>
+    <string name="no_data_found">No Data found</string>
+    <string name="str_category_name">%s (%s)</string>
+</resources>

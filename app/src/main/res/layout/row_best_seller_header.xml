@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/txtVw_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey_light"
+    android:paddingStart="@dimen/padding_sixteen"
+    android:paddingTop="@dimen/padding_eight"
+    android:paddingEnd="@dimen/padding_sixteen"
+    tools:text="Header"
+    android:textSize="@dimen/small_text_size"
+    android:paddingBottom="@dimen/padding_eight" />

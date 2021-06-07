@@ -1,0 +1,80 @@
+ext {
+    versions = [
+            sourceCompatibility: JavaVersion.VERSION_1_8,
+            targetCompatibility: JavaVersion.VERSION_1_8,
+            androidSdk         : [
+                    compile    : 28,
+                    target     : 28,
+                    versionName: "1.0",
+                    versionCode: 1,
+                    min        : 21,
+                    buildTools : '28.0.3'
+            ],
+            kotlin             : '1.4.32',
+            androidX           : '1.0.0-beta01',
+            constraintLayout   : '1.1.2',
+            moshi              : '1.8.0',
+            rxAndroid          : '2.1.0',
+            rxJava             : '2.2.2',
+            retrofit           : '2.2.0',
+            autoValue          : '1.4',
+            okHttp             : '3.6.0',
+            lifecycle          : '2.3.1',
+            runtime            : '2.0.0-beta01',
+            koin               : '2.1.5'
+
+    ]
+    gradlePlugins = [
+            androidBuild: 'com.android.tools.build:gradle:4.1.1',
+            kotlin      : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+    ]
+    libraries = [
+            app    : [
+                    koin         : "org.koin:koin-android:${versions.koin}",
+                    koinViewModel: "org.koin:koin-androidx-viewmodel:${versions.koin}",
+                    koinScope    : "org.koin:koin-androidx-scope:${versions.koin}",
+
+                    kotlin       : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
+                    kotlinReflect: "org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}",
+                    rxJava       : "io.reactivex.rxjava2:rxjava:${versions.rxJava}",
+                    rxAndroid    : "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}",
+                    moshi        : "com.squareup.moshi:moshi:${versions.moshi}",
+                    moshiKotlin  : "com.squareup.moshi:moshi-kotlin:${versions.moshi}",
+                    retrofit     : [
+                            lib             : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                            rxJavaAdapter   : "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
+                            moshiConverter  : "com.squareup.retrofit2:converter-moshi:${versions.retrofit}"
+                    ],
+                    lifecycle    : [
+                            extensions     : "androidx.lifecycle:lifecycle-extensions:2.2.0",
+                            runtime        : "androidx.lifecycle:lifecycle-runtime:${versions.runtime}",
+                            reactivestreams: "androidx.lifecycle:lifecycle-reactivestreams:${versions.lifecycle}",
+                            savedState     : "androidx.lifecycle:lifecycle-viewmodel-savedstate:${versions.lifecycle}"
+                    ],
+                    okHttp       : "com.squareup.okhttp3:okhttp:${versions.okHttp}",
+                    okHttpLogging: "com.squareup.okhttp3:logging-interceptor:${versions.okHttp}",
+            ],
+
+            test   : [
+                    junit          : 'androidx.test.ext:junit:1.0.0',
+                    mockito        : 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC2',
+                    mockitoInline  : 'org.mockito:mockito-inline:2.13.0',
+                    spoonClient    : 'com.squareup.spoon:spoon-client:1.6.4',
+                    androidArchCore: 'androidx.arch.core:core-testing:2.0.0-beta01',
+                    truth          : [
+                            lib  : 'com.google.truth:truth:1.0',
+                            guava: 'com.google.guava:guava:28.0-android'  // always set here the same Guava version that Truth uses
+                    ],
+
+            ],
+
+            support: [
+                    appcompat       : "androidx.appcompat:appcompat:${versions.androidX}",
+                    recyclerview    : "androidx.recyclerview:recyclerview:${versions.androidX}",
+                    v4              : "androidx.legacy:legacy-support-v4:${versions.androidX}",
+                    annotations     : "com.android.support:support-annotations:${versions.androidX}",
+                    design          : "com.google.android.material:material:${versions.androidX}",
+                    constraintLayout: "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+            ]
+    ]
+}
